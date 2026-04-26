@@ -7,7 +7,12 @@ phases:
    
     commands:
         - npm install
-       
+
+  pre_build:
+    commands:
+      - echo Running tests...
+      - npm test -- --watchAll=false --passWithNoTests   
+      
   build:
     commands:
         # run build script
